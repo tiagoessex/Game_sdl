@@ -1,0 +1,69 @@
+# Project: game
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = AnimSprite.o Enemy.o EnemyExplosions.o EnemyShoots.o main.o Move.o Player.o PlayerShoots.o SDL_collide.o Sprite.o TFont.o Timer.o TMusic.o TSound.o $(RES)
+LINKOBJ  = AnimSprite.o Enemy.o EnemyExplosions.o EnemyShoots.o main.o Move.o Player.o PlayerShoots.o SDL_collide.o Sprite.o TFont.o Timer.o TMusic.o TSound.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -L"G:/SDL-dev/lib" -mwindows -lmingw32 -lSDLmain -lSDL -lSDL_image -lSDL_ttf -lSDL_mixer  
+INCS =  -I"C:/Dev-Cpp/include"  -I"G:/SDL-dev/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include"  -I"G:/SDL-dev/include" 
+BIN  = game.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before game.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "game.exe" $(LIBS)
+
+AnimSprite.o: AnimSprite.cpp
+	$(CPP) -c AnimSprite.cpp -o AnimSprite.o $(CXXFLAGS)
+
+Enemy.o: Enemy.cpp
+	$(CPP) -c Enemy.cpp -o Enemy.o $(CXXFLAGS)
+
+EnemyExplosions.o: EnemyExplosions.cpp
+	$(CPP) -c EnemyExplosions.cpp -o EnemyExplosions.o $(CXXFLAGS)
+
+EnemyShoots.o: EnemyShoots.cpp
+	$(CPP) -c EnemyShoots.cpp -o EnemyShoots.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Move.o: Move.cpp
+	$(CPP) -c Move.cpp -o Move.o $(CXXFLAGS)
+
+Player.o: Player.cpp
+	$(CPP) -c Player.cpp -o Player.o $(CXXFLAGS)
+
+PlayerShoots.o: PlayerShoots.cpp
+	$(CPP) -c PlayerShoots.cpp -o PlayerShoots.o $(CXXFLAGS)
+
+SDL_collide.o: SDL_collide.cpp
+	$(CPP) -c SDL_collide.cpp -o SDL_collide.o $(CXXFLAGS)
+
+Sprite.o: Sprite.cpp
+	$(CPP) -c Sprite.cpp -o Sprite.o $(CXXFLAGS)
+
+TFont.o: TFont.cpp
+	$(CPP) -c TFont.cpp -o TFont.o $(CXXFLAGS)
+
+Timer.o: Timer.cpp
+	$(CPP) -c Timer.cpp -o Timer.o $(CXXFLAGS)
+
+TMusic.o: TMusic.cpp
+	$(CPP) -c TMusic.cpp -o TMusic.o $(CXXFLAGS)
+
+TSound.o: TSound.cpp
+	$(CPP) -c TSound.cpp -o TSound.o $(CXXFLAGS)
